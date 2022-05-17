@@ -1,5 +1,5 @@
 :root {
-   --header-height: 6rem;
+   --header-height: 7rem;
    --standart-color: hsl(300, 79%, 96%);
    --color-text: hsl(300, 91%, 29%);
    --border-color: hsl(300, 82%, 18%);
@@ -10,6 +10,20 @@
    font-size: 62.5%;
 }
 
+/* Cores custom */
+#social-links .list-item a svg g,
+#social-links .list-item a svg {
+   fill: var(--standart-color);
+   transition: 0.3s fill;
+}
+
+#social-links .list-item:hover a svg g,
+#social-links .list-item:hover a svg {
+   fill: var(--button-hover);
+   transition: 0.3s fill;
+}
+
+/* Estilos Gerais */
 img {
    width: 100%;
    height: 100%;
@@ -20,6 +34,9 @@ html {
 }
 
 body {
+   width: 100vw;
+   height: 100vh;
+
    background-image: url(../images/bg-mobile.svg);
    background-repeat: no-repeat;
    background-position: top;
@@ -30,18 +47,19 @@ body {
 }
 
 header {
+   display: flex;
+   justify-content: left;
    height: var(--header-height);
 }
 
 .wrapper {
-   width: min(50rem, 100%);
+   width: min(50%, 100%);
    margin-inline: auto;
    padding-inline: 3rem;
 }
 
-.logo svg {
-   margin-top: 1rem;
-   margin-left: 2rem;
+.logo {
+   height: 100%;
 }
 
 .main-container {
@@ -49,6 +67,7 @@ header {
    text-align: center;
 }
 
+/* Section Main */
 #main img {
    margin-block: 6rem;
 }
@@ -73,6 +92,8 @@ header {
    padding-inline: 3rem;
    padding-block: 1rem;
 
+   font-size: 2rem;
+
    border-radius: 22px;
    border: 1px solid var(--border-color);
    background-color: var(--button-color);
@@ -85,4 +106,27 @@ header {
    background-color: var(--button-hover);
    color: var(--standart-color);
    transition: 0.5s background-color;
+}
+
+/* Section Social Links */
+#social-links .list {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   gap: 2rem;
+   margin-block: 3rem;
+}
+
+#social-links .list-item svg {
+   height: 6rem;
+}
+
+/* Footer */
+footer {
+   margin-top: 8rem;
+   margin-bottom: 1rem;
+   font-size: 1.4rem;
+   text-align: center;
+   text-decoration: none;
 }
