@@ -1,0 +1,88 @@
+:root {
+   --header-height: 6rem;
+   --standart-color: hsl(300, 79%, 96%);
+   --color-text: hsl(300, 91%, 29%);
+   --border-color: hsl(300, 82%, 18%);
+   --button-color: hsl(300, 31%, 93%);
+   --button-hover: hsl(300, 94%, 21%);
+
+
+   font-size: 62.5%;
+}
+
+img {
+   width: 100%;
+   height: 100%;
+}
+
+html {
+   box-sizing: border-box;
+}
+
+body {
+   background-image: url(../images/bg-mobile.svg);
+   background-repeat: no-repeat;
+   background-position: top;
+   background-size: cover;
+   background-color: #bbbb;
+   align-items: center;
+   font-family: Open sans, Arial;
+}
+
+header {
+   height: var(--header-height);
+}
+
+.wrapper {
+   width: min(50rem, 100%);
+   margin-inline: auto;
+   padding-inline: 3rem;
+}
+
+.logo svg {
+   margin-top: 1rem;
+   margin-left: 2rem;
+}
+
+.main-container {
+   color: var(--standart-color);
+   text-align: center;
+}
+
+#main img {
+   margin-block: 6rem;
+}
+
+#main .title {
+   margin-block: 2rem;
+
+   font-size: 5rem;
+   font-weight: 700;
+}
+
+#main legend {
+   margin-block: 2rem;
+
+   font-size: 2.5rem;
+   font-weight: 400;
+   line-height: 130%;
+}
+
+#main .button {
+   margin-block: 4rem;
+   padding-inline: 3rem;
+   padding-block: 1rem;
+
+   border-radius: 22px;
+   border: 1px solid var(--border-color);
+   background-color: var(--button-color);
+   color: var(--color-text);
+
+   transition: 0.3s background-color;
+}
+
+#main .button:hover {
+   background-color: var(--button-hover);
+   color: var(--standart-color);
+   transition: 0.5s background-color;
+}
