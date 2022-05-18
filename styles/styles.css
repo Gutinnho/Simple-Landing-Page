@@ -1,25 +1,42 @@
 :root {
+   /* Altura do header */
    --header-height: 7rem;
-   --standart-color: hsl(300, 79%, 96%);
-   --color-text: hsl(300, 91%, 29%);
-   --border-color: hsl(300, 82%, 18%);
-   --button-color: hsl(300, 31%, 93%);
-   --button-hover: hsl(300, 94%, 21%);
 
+   /* Cores */
+   /* A variável --hue deve estar entre 230 à 350 */
+   --hue: 300;
+   --standart-color: hsl(var(--hue), 79%, 96%);
+   --color-text: hsl(var(--hue), 11%, 66%);
+   --border-color: hsl(var(--hue), 300, 82%, 18%);
+   --button-color: hsl(var(--hue), 31%, 93%);
+   --button-hover: hsl(var(--hue), 94%, 21%);
+   --bg-desktop-color: hsl(var(--hue), 69%, 12%);
+   --bg-mobile-color: hsl(var(--hue), 25%, 9%);
 
+   /* Fonte responsiva */
    font-size: 62.5%;
 }
 
 /* Cores custom */
 #social-links .list-item a svg g,
 #social-links .list-item a svg {
-   fill: var(--standart-color);
+   fill: var(--button-color);
    transition: 0.3s fill;
 }
 
 #social-links .list-item:hover a svg g,
 #social-links .list-item:hover a svg {
-   fill: var(--button-hover);
+   fill: var(--color-text);
+   transition: 0.3s fill color;
+}
+
+header .logo g {
+   fill: #fff;
+   transition: 0.3s fill;
+}
+
+header .logo:hover g {
+   fill: var(--color-text);
    transition: 0.3s fill;
 }
 
@@ -36,12 +53,11 @@ html {
 body {
    width: 100vw;
    height: 100vh;
-
    background-image: url(../images/bg-mobile.svg);
    background-repeat: no-repeat;
    background-position: top;
    background-size: cover;
-   background-color: #bbbb;
+   background-color: var(--bg-mobile-color);
    align-items: center;
    font-family: Open sans, Arial;
 }
@@ -53,7 +69,7 @@ header {
 }
 
 .wrapper {
-   width: min(50%, 100%);
+   width: min(30rem, 100%);
    margin-inline: auto;
    padding-inline: 3rem;
 }
@@ -77,6 +93,8 @@ header {
 
    font-size: 5rem;
    font-weight: 700;
+
+   color: var(--color-text);
 }
 
 #main legend {
@@ -85,6 +103,8 @@ header {
    font-size: 2.5rem;
    font-weight: 400;
    line-height: 130%;
+
+   color: var(--color-text);
 }
 
 #main .button {
@@ -97,7 +117,7 @@ header {
    border-radius: 22px;
    border: 1px solid var(--border-color);
    background-color: var(--button-color);
-   color: var(--color-text);
+   color: var(--button-hover);
 
    transition: 0.3s background-color;
 }
@@ -123,12 +143,26 @@ header {
 }
 
 /* Footer */
-footer {
+footer, footer a {
    margin-top: 8rem;
    margin-bottom: 1rem;
-   font-size: 1.4rem;
+
+   font-size: 1.6rem;
    text-align: center;
    text-decoration: none;
+   color: var(--color-text);
+}
+
+@media(min-width : 500px) {
+   .wrapper {
+      width: min(40rem, 100%);
+   }
+}
+
+@media(min-width : 800px) {
+   .wrapper {
+      width: min(50rem, 100%);
+   }
 }
 
 @media(min-width : 1024px) {
@@ -152,7 +186,7 @@ footer {
       background-repeat: no-repeat;
       background-position: top;
       background-size: cover;
-      background-color: #bbbb;
+      background-color: var(--bg-desktop-color);
       align-items: center;
       font-family: Open sans, Arial;
    }
